@@ -1,0 +1,155 @@
+@use "/app/styles/helpers" as *;
+
+.box {
+  padding: 80px 0;
+  background: linear-gradient(
+    197deg,
+    rgba(41, 121, 255, 0.1) -11.48%,
+    rgba(76, 201, 255, 0.1) 67.84%,
+    rgba(76, 255, 233, 0.1) 123.3%
+  );
+
+  @include tablet {
+    padding: 48px 0;
+  }
+
+  h2 {
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 116.667%;
+    margin-bottom: 24px;
+
+    @include tablet {
+      font-size: 32px;
+    }
+  }
+}
+
+.wrapper {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  @include laptop {
+    flex-direction: column;
+  }
+
+  @include tablet {
+    gap: 56px;
+    padding: 0;
+  }
+}
+
+.textContentBox {
+  max-width: 440px;
+
+  @include laptop {
+    max-width: 100%;
+  }
+
+  @include tablet {
+    padding: 0 16px;
+  }
+
+  p {
+    @extend %text;
+  }
+}
+
+.buttonsBox {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  @include laptop {
+    flex-direction: row;
+  }
+
+  @include tablet {
+    flex-direction: column;
+    margin-top: 24px;
+  }
+
+  button {
+    font-family: inherit;
+    width: fit-content;
+    border: 0;
+    outline: none;
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    gap: 8px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0px 16px 32px 0px rgba(29, 55, 122, 0.08);
+
+    @include tablet {
+      width: 100%;
+    }
+
+    span {
+      @extend %text;
+      font-weight: 500;
+    }
+  }
+}
+
+.modalBox {
+  padding: 40px;
+  border-radius: 24px;
+  background: var(--Neutral-White---Main, #fff);
+  box-shadow: 0px 16px 32px 0px rgba(29, 55, 122, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  @include tablet {
+    width: 100%;
+    border-radius: 0;
+    padding: 24px 16px;
+  }
+
+  > button {
+    margin-top: 16px;
+
+    @include tablet {
+      margin-top: 0;
+    }
+  }
+
+  > input {
+    height: 48px;
+  }
+
+  > input,
+  > textarea {
+    min-width: 516px;
+    padding: 12px 16px;
+    border: 0;
+    outline: none;
+    border-radius: 14px;
+    background: var(
+      --Neutral-Secondary-Gradient---Main,
+      linear-gradient(
+        187deg,
+        rgba(41, 121, 255, 0.1) -11.48%,
+        rgba(76, 201, 255, 0.1) 67.84%,
+        rgba(76, 255, 233, 0.1) 123.3%
+      )
+    );
+    color: var(--Neutral-Grey---Main, #66889e);
+    resize: none;
+    font-family: inherit;
+    font-size: 16px;
+
+    @include tablet {
+      min-width: 100%;
+    }
+
+    &::placeholder {
+      color: var(--Neutral-Grey---Main, #66889e);
+    }
+  }
+}

@@ -1,0 +1,153 @@
+@use "/app/styles/helpers" as *;
+
+.box {
+  padding: 80px 0 140px;
+  position: relative;
+
+  @include tablet {
+    padding: 48px 0 100px;
+  }
+
+  @include mobile {
+    padding-bottom: 48px;
+  }
+
+  h2 {
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 116.667%;
+    margin-bottom: 40px;
+
+    @include tablet {
+      font-size: 32px;
+      margin-bottom: 24px;
+    }
+  }
+}
+
+.carouselContainer {
+  margin-left: -17px;
+  position: relative;
+  overflow: hidden;
+  width: calc(100% + 31vh);
+  position: relative;
+}
+
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  padding: 15px;
+}
+
+.bgCircle {
+  z-index: 0;
+  position: absolute;
+  border-radius: 1292.181px;
+  width: 1292.181px;
+  height: 225.153px;
+  flex-shrink: 0;
+  filter: blur(150px);
+  opacity: 0.22;
+  background: $mainColor;
+  bottom: 000px;
+  right: -50vw;
+
+  &.bgBlue {
+    filter: blur(100px);
+
+    background: #4cc9ff;
+
+    bottom: -100px;
+    right: -30vw;
+  }
+}
+
+.reviewBox {
+  padding: 1.5em;
+  min-width: 24em;
+  height: 15em;
+  border-radius: 12px;
+  border: 1px solid var(--Neutral-White---Main, #fff);
+  background: var(--Neutral-Background-for-card, rgba(255, 255, 255, 1));
+  box-shadow: 0px 12px 24px 0px rgba(29, 55, 122, 0.08);
+  margin-right: 2.5em;
+  transition: all 0.5s ease-in-out;
+  position: relative;
+  z-index: 1;
+  max-width: 384px !important;
+
+  @include tablet {
+    min-width: 300px;
+    margin-right: 16px;
+    height: auto;
+    padding: 16px;
+  }
+
+  svg {
+    width: 1.5em;
+    height: 1.5em;
+  }
+
+  span {
+    display: block;
+    @extend %text;
+    font-size: 1em;
+    width: 100%;
+  }
+
+  h4 {
+    @extend %text;
+    font-size: 1em;
+    margin-bottom: 0.5em;
+  }
+}
+
+.starBox {
+  margin-bottom: 10px;
+}
+.arrow {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 14px;
+  background: var(--Neutral-Light-Grey, #dfebff);
+  position: absolute;
+  bottom: -75px;
+  left: 0;
+
+  cursor: pointer;
+  opacity: 1 !important;
+  z-index: 9;
+
+  @include tablet {
+    display: none;
+  }
+
+  svg {
+    transition: all 0.3s ease-in-out;
+    transform: rotate(180deg) scale(1);
+  }
+
+  &.prevArrow {
+    left: 72px;
+    right: initial;
+
+    svg {
+      transform: rotate(0deg) scale(1);
+    }
+
+    &:active {
+      svg {
+        transform: rotate(0deg) scale(0.85);
+      }
+    }
+  }
+
+  &:active {
+    svg {
+      transform: rotate(180deg) scale(0.85);
+    }
+  }
+}

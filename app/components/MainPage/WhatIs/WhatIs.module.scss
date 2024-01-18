@@ -1,0 +1,60 @@
+@use "/app/styles/helpers" as *;
+
+.box {
+  padding: 80px 0;
+  position: relative;
+
+  @include tablet {
+    padding: 48px 0;
+  }
+
+  h2 {
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 116.667%;
+    margin-bottom: 8px;
+
+    @include tablet {
+      font-size: 32px;
+    }
+  }
+}
+
+.wrapper {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  justify-content: space-between;
+
+  @include laptop {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  @include tablet {
+    flex-direction: column;
+  }
+}
+
+.textContentBox {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  p {
+    max-width: 540px;
+    @extend %text;
+
+    @include laptop {
+      max-width: 100%;
+    }
+  }
+}
+
+.imageContentBox {
+  img {
+    width: 100%;
+    max-width: 596px;
+    height: auto;
+  }
+}

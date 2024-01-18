@@ -1,0 +1,92 @@
+@use "/app/styles/helpers" as *;
+
+.box {
+  width: 100%;
+  background: var(
+    --Neutral-Secondary-Gradient---Main,
+    linear-gradient(
+      197deg,
+      rgba(41, 121, 255, 0.1) -11.48%,
+      rgba(76, 201, 255, 0.1) 67.84%,
+      rgba(76, 255, 233, 0.1) 123.3%
+    )
+  );
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 56px 0px;
+
+  @media screen and (max-width: 1330px) {
+    padding: 56px 80px;
+  }
+
+  @include laptop {
+    padding: 56px 40px;
+  }
+
+  @include tablet {
+    padding: 24px 16px;
+    flex-direction: column;
+    gap: 33px;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 280px;
+  position: relative;
+
+  @include laptop {
+    max-width: 186px;
+    height: 123px;
+  }
+  @include tablet {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+  }
+
+  &::after {
+    content: "";
+    width: 1px;
+    height: 100%;
+    position: absolute;
+    left: -80px;
+    top: 0;
+    background: $black;
+
+    @include tablet {
+      height: 1px;
+      width: 100%;
+      left: 0;
+      top: -16px;
+    }
+  }
+
+  &:first-child::after {
+    display: none;
+  }
+
+  h3 {
+    color: $black;
+    font-size: 88px;
+    line-height: 109.091%;
+    font-weight: 400;
+
+    @include laptop {
+      font-size: 40px;
+    }
+  }
+
+  p {
+    color: $black;
+    @extend %text;
+  }
+}

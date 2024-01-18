@@ -1,0 +1,81 @@
+@use "/app/styles/helpers" as *;
+
+.box {
+  padding-top: 16px;
+  background: #fff;
+  position: relative;
+
+  @include tablet {
+    padding-top: 48px;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 16px;
+    background: #fbfbfb;
+
+    @include tablet {
+      height: 48px;
+    }
+  }
+}
+
+.wrapper {
+  padding: 24px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @media screen and (max-width: 1330px) {
+    padding: 24px 80px;
+  }
+
+  @include laptop {
+    padding: 24px 40px;
+  }
+
+  @include tablet {
+    padding: 24px 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+}
+
+.linksBox {
+  display: flex;
+  gap: 8px;
+
+  a {
+    line-height: 150%;
+  }
+
+  @include tablet {
+    flex-direction: column;
+
+    span {
+      display: none;
+    }
+  }
+}
+
+.textBox {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+
+  @include tablet {
+    align-items: flex-start;
+  }
+
+  > span {
+    color: var(--Neutral-Grey---Main, #66889e);
+    font-size: 12px;
+    line-height: 133.333%;
+  }
+}

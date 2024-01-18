@@ -1,0 +1,190 @@
+@use "/app/styles/helpers" as *;
+
+.box {
+  position: relative;
+  padding: 80px 0;
+
+  @include tablet {
+    padding: 48px 0;
+  }
+
+  h2 {
+    text-align: center;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 116.667%;
+
+    @include laptop {
+      padding: 0 40px;
+    }
+
+    @include tablet {
+      text-align: left;
+      font-size: 32px;
+      padding: 0 16px;
+    }
+  }
+}
+
+.wrapper {
+  @include laptop {
+    padding: 0;
+  }
+}
+
+.bgCircle {
+  z-index: 0;
+  position: absolute;
+  border-radius: 1292.181px;
+  width: 1292.181px;
+  height: 225.153px;
+  flex-shrink: 0;
+  filter: blur(200px);
+  opacity: 0.37;
+  background: $mainColor;
+
+  top: 500px;
+  left: -50vw;
+
+  &.bgBlue {
+    background: #4cc9ff;
+
+    top: 200px;
+    left: -50vw;
+  }
+}
+
+.contentBox {
+  position: relative;
+  z-index: 1;
+  padding-top: 56px;
+  display: flex;
+  gap: 40px;
+
+  @include laptop {
+    flex-direction: column;
+  }
+
+  @include tablet {
+    padding-top: 8px;
+    gap: 8px;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  @include laptop {
+    padding: 0 40px;
+  }
+
+  @include tablet {
+    padding: 0 16px;
+    gap: 24px;
+  }
+
+  p {
+    @extend %text;
+    color: $black;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.listButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  @include laptop {
+    flex-direction: row;
+    overflow-x: scroll;
+    padding: 16px 40px;
+  }
+
+  @include tablet {
+    padding: 16px;
+  }
+
+  li {
+    cursor: pointer;
+    width: 490px;
+    height: 80px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    border-radius: 16px;
+    border: 2px solid #fff;
+    background: rgba(255, 255, 255, 0.7);
+    box-shadow: 0px 8px 16px 0px rgba(29, 55, 122, 0.06);
+    transition: all 0.3s ease-in-out;
+    color: $black;
+    line-height: 150%;
+
+    @include laptop {
+      min-width: 252px;
+      height: 144px;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    @include tablet {
+      flex-direction: row;
+      min-width: 264px;
+      height: 90px;
+      align-items: center;
+    }
+
+    &.active {
+      background: $mainColor;
+      border: 2px solid $mainColor;
+      box-shadow: 0px 2px 4px 0px rgba(29, 55, 122, 0.06);
+      color: $white;
+
+      svg {
+        background: $white;
+      }
+    }
+
+    &:hover {
+      @include tablet(true) {
+        background: $mainColor;
+        border: 2px solid $mainColor;
+        box-shadow: 0px 2px 4px 0px rgba(29, 55, 122, 0.06);
+        color: $white;
+
+        svg {
+          background: $white;
+        }
+      }
+    }
+  }
+
+  svg {
+    transition: all 0.3s ease-in-out;
+    width: 48px;
+    height: 48px;
+    padding: 12px;
+    border-radius: 8px;
+    background: linear-gradient(
+      197deg,
+      rgba(41, 121, 255, 0.1) -11.48%,
+      rgba(76, 201, 255, 0.1) 67.84%,
+      rgba(76, 255, 233, 0.1) 123.3%
+    );
+
+    @include tablet {
+      min-width: 32px;
+
+      width: 32px;
+      height: 32px;
+      padding: 8px;
+    }
+  }
+}

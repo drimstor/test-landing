@@ -1,0 +1,41 @@
+@use "/app/styles/helpers" as *;
+// Switch.module.scss
+.switch-container {
+  width: 40px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.switch-input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.switch-slider {
+  width: 40px;
+  height: 24px;
+  background-color: #ddd;
+  border-radius: 12px; // Половина высоты, чтобы сделать круглый
+  position: relative;
+  transition: background-color 0.3s;
+
+  &.checked {
+    background-color: $mainColor;
+  }
+}
+
+.switch-circle {
+  width: 20px; // Диаметр, чтобы круг целиком умещался
+  height: 20px; // Диаметр
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.3s, background-color 0.3s;
+}

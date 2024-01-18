@@ -1,0 +1,55 @@
+@use "/app/styles/helpers" as *;
+
+.button {
+  transition: all 0.3s ease-in-out;
+
+  &:active {
+    transform: scale(0.94);
+  }
+}
+
+.contained {
+  background: $mainColor;
+  color: $white;
+
+  &:hover {
+  }
+
+  &:active {
+  }
+}
+.outlined {
+  background: linear-gradient(
+    197deg,
+    rgba(41, 121, 255, 0.1) -11.48%,
+    rgba(76, 201, 255, 0.1) 67.84%,
+    rgba(76, 255, 233, 0.1) 123.3%
+  );
+  color: $mainColor;
+
+  &:hover {
+  }
+  &:active {
+  }
+}
+
+.white {
+  background: #fff;
+  color: $mainColor;
+}
+
+.medium {
+  border-radius: 14px;
+  @extend %text;
+  font-weight: 600;
+  cursor: pointer;
+  height: 48px;
+  min-width: 144px;
+  transition: all 0.3s;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  border: 0;
+}

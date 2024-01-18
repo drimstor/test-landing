@@ -1,0 +1,178 @@
+@use "/app/styles/helpers" as *;
+
+.box {
+  padding-top: 64px;
+  position: relative;
+
+  @include tablet {
+    padding-top: 88px;
+    padding-bottom: 48px;
+  }
+}
+
+.bgCircle {
+  z-index: 0;
+  position: absolute;
+  border-radius: 1292.181px;
+  width: 1292.181px;
+  height: 225.153px;
+  flex-shrink: 0;
+  filter: blur(200px);
+  opacity: 0.33;
+  background: #2979ff;
+
+  top: -300px;
+  left: 50vw;
+
+  &.bgBlue {
+    background: #4cc9ff;
+    top: 120px;
+    left: 40vw;
+  }
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 69px;
+
+  @media screen and (max-width: 1330px) {
+    gap: 16px;
+  }
+
+  @include laptop {
+    gap: 0;
+    justify-content: space-between;
+  }
+
+  @include tablet {
+    justify-content: flex-start;
+  }
+}
+
+.textContentBox {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  max-width: 567px;
+
+  @include laptop {
+    max-width: 332px;
+    gap: 24px;
+  }
+
+  @include mobile {
+    max-width: 100%;
+  }
+
+  h1 {
+    color: $black;
+    font-size: 56px;
+    font-weight: 600;
+    line-height: 114.286%;
+
+    @include laptop {
+      font-size: 48px;
+    }
+  }
+
+  p {
+    color: $black;
+    font-size: 24px;
+    line-height: 133.333%;
+
+    @include laptop {
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+
+    @include tablet {
+      margin-bottom: 16px;
+    }
+  }
+}
+
+.buttonsBox {
+  display: flex;
+  gap: 24px;
+
+  @include laptop {
+    gap: 16px;
+  }
+
+  > button {
+    min-width: 200px;
+
+    @include laptop {
+      min-width: 104px;
+    }
+
+    @include mobile {
+      min-width: calc(50% - 8px);
+    }
+  }
+}
+
+.imagesBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 596px;
+  height: 624px;
+  position: relative;
+
+  @include laptop {
+    width: 372px;
+    height: 448px;
+  }
+
+  @include tablet {
+    display: none;
+  }
+
+  img {
+    height: auto;
+
+    &:nth-child(1),
+    &:nth-child(3) {
+      width: 240px;
+      position: absolute;
+      z-index: 1;
+
+      @include laptop {
+        width: 171px;
+      }
+    }
+    &:nth-child(2) {
+      width: 390px;
+      position: relative;
+      z-index: 2;
+
+      @include laptop {
+        width: 227px;
+      }
+    }
+
+    &:nth-child(1) {
+      left: -30px;
+      top: 20%;
+
+      @include laptop {
+        left: initial;
+        right: 55px;
+        top: 11%;
+      }
+    }
+
+    &:nth-child(3) {
+      right: -15px;
+      bottom: 26%;
+
+      @include laptop {
+        bottom: 10%;
+        right: 40px;
+      }
+    }
+  }
+}

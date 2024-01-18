@@ -1,0 +1,101 @@
+@use "/app/styles/helpers" as *;
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+.wrapper {
+  max-width: 1232px;
+  width: 100%;
+  padding: 0 16px;
+  margin: 0 auto;
+
+  @media screen and (max-width: 1330px) {
+    padding: 0 80px;
+  }
+
+  @include laptop {
+    padding: 0 40px;
+  }
+
+  @include tablet {
+    padding: 0 16px;
+  }
+}
+
+.slick-list {
+  overflow: visible !important;
+}
+
+.carousel-container {
+  padding-top: 80px;
+  margin: 0 auto;
+  position: relative;
+
+  @include tablet {
+    padding-top: 40px;
+  }
+}
+
+.design-carousel {
+  .carousel-item.left-active,
+  .carousel-item.right-active {
+    opacity: 0.4;
+  }
+
+  .carousel-item {
+    cursor: pointer;
+    opacity: 0.06;
+    transition: opacity 0.5s ease-in-out, margin 0.5s ease-in-out;
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+
+  .carousel-item.active {
+    opacity: 1;
+    margin-top: -24px;
+
+    @include tablet {
+      margin-top: 0;
+    }
+  }
+}
+
+.reviews-carousel {
+  position: relative;
+  padding-top: 0;
+
+  .slick-track {
+    display: flex !important;
+    padding: 25px !important;
+  }
+
+  .slick-slide {
+    min-width: 384px !important;
+    max-width: 384px !important;
+    margin-right: 40px !important;
+    width: fit-content !important;
+    height: fit-content !important;
+
+    @include tablet {
+      min-width: 300px !important;
+      margin-right: 16px !important;
+    }
+  }
+}

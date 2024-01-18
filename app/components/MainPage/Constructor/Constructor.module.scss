@@ -1,0 +1,162 @@
+@use "/app/styles/helpers" as *;
+
+.box {
+  padding: 80px 0;
+  background: linear-gradient(
+    197deg,
+    rgba(41, 121, 255, 0.1) -11.48%,
+    rgba(76, 201, 255, 0.1) 67.84%,
+    rgba(76, 255, 233, 0.1) 123.3%
+  );
+
+  @include tablet {
+    padding: 48px 0;
+  }
+
+  h2 {
+    text-align: center;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 116.667%;
+    margin-bottom: 56px;
+
+    @include tablet {
+      font-size: 32px;
+      margin-bottom: 40px;
+      text-align: left;
+      padding: 0 16px;
+    }
+  }
+}
+
+.contentBox {
+  display: flex;
+  gap: 40px;
+
+  @include laptop {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  @include tablet {
+    gap: 0;
+  }
+}
+
+.wrapper {
+  @include tablet {
+    padding: 0;
+  }
+}
+
+.whiteBoxItem > span,
+.price {
+  @include tablet {
+    display: none;
+  }
+}
+
+.blueBox {
+  max-width: 382px;
+  min-height: 432px;
+  border-radius: 24px;
+  box-shadow: 0px 16px 32px 0px rgba(29, 55, 122, 0.08);
+  background: $mainColor;
+  padding: 24px;
+  color: $white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @include laptop {
+    max-width: 100%;
+    min-height: 200px;
+  }
+
+  @include tablet {
+    border-radius: 0px;
+    min-height: 192px;
+  }
+
+  button {
+    width: 100%;
+  }
+}
+
+.textBox {
+  > span {
+    font-size: 24px;
+    line-height: 133.333%;
+    display: block;
+    margin-bottom: 8px;
+
+    @include laptop {
+      font-size: 16px;
+      margin-bottom: 16px;
+    }
+
+    @include tablet {
+      margin-bottom: 8px;
+    }
+  }
+
+  h4 {
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 116.667%;
+
+    @include laptop {
+      font-size: 32px;
+    }
+
+    span {
+      @extend %text;
+    }
+  }
+}
+
+.whiteBox {
+  padding: 0 24px;
+  border-radius: 24px;
+  border: 2px solid var(--Neutral-White---Main, #fff);
+  background: var(--Neutral-Background-for-card, rgba(255, 255, 255, 0.7));
+  box-shadow: 0px 16px 32px 0px rgba(29, 55, 122, 0.08);
+  width: 100%;
+
+  @include tablet {
+    border-radius: 0;
+  }
+
+  &Item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 0;
+    position: relative;
+    border-bottom: 1px solid var(--Neutral-Light-Grey, #dfebff);
+
+    @include tablet {
+      padding: 16px 0;
+    }
+
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+}
+
+.iconBox {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  > svg {
+    width: 40px;
+  }
+}
+
+.switchBox {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
