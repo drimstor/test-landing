@@ -16,7 +16,7 @@
       rgba(76, 255, 233, 0.1) 123.3%
     )
   );
-  transition: all 0.3s ease-in-out;
+  // transition: all 0.3s ease-in-out;
   min-width: 516px;
   min-height: 50px;
   border: 1px solid var(--Neutral-Stroke-for-inputs, #c5d7e4);
@@ -43,7 +43,7 @@
       padding: 20px 16px 4px;
 
       ~ label {
-        top: 6px;
+        top: 7px;
         left: 14px;
         font-size: 12px;
         line-height: 107%;
@@ -90,14 +90,18 @@
       linear-gradient(#ffffff, #ffffff) 50% 50% / calc(100% - 28px)
         calc(100% - 2px) no-repeat,
       linear-gradient(#2c77cf 0%, #3eb2ca 100%);
+
     border: 0;
 
     input,
     textarea {
       padding: 20px 16px 4px;
 
+      margin-left: 1px;
+      margin-top: 1px;
+
       ~ label {
-        top: 6px;
+        top: 7px;
         left: 14px;
         font-size: 12px;
         line-height: 107%;
