@@ -2,10 +2,6 @@
 
 .button {
   transition: all 0.3s ease-in-out;
-
-  &:active {
-    transform: scale(0.94);
-  }
 }
 
 .contained {
@@ -13,11 +9,14 @@
   color: $white;
 
   &:hover {
+    background: #1a59c4;
   }
 
   &:active {
+    background: #093d94;
   }
 }
+
 .outlined {
   background: linear-gradient(
     197deg,
@@ -28,14 +27,36 @@
   color: $mainColor;
 
   &:hover {
+    background: linear-gradient(
+      197deg,
+      rgba(41, 121, 255, 0.15) -11.48%,
+      rgba(76, 201, 255, 0.15) 67.84%,
+      rgba(76, 255, 233, 0.15) 123.3%
+    );
+    box-shadow: 0px 14px 16px -6px rgba(21, 81, 133, 0.16);
   }
+
   &:active {
+    background: linear-gradient(
+      197deg,
+      rgba(41, 121, 255, 0.4) -11.48%,
+      rgba(76, 201, 255, 0.4) 67.84%,
+      rgba(76, 255, 233, 0.4) 123.3%
+    );
   }
 }
 
 .white {
   background: #fff;
   color: $mainColor;
+
+  &:hover {
+    box-shadow: 0px 8px 12px -6px rgba(21, 81, 133, 0.24);
+  }
+
+  &:active {
+    background: var(--Neutral-White---Active, #ebf3f9);
+  }
 }
 
 .medium {

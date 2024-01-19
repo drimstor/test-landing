@@ -1,8 +1,59 @@
+"use client";
+
 import clsx from "clsx";
 import styles from "./ContactUs.module.scss";
 import Button from "@/components/UI-kit/Buttons/Button";
+import useValidation from "@/hooks/useValidation/useValidation";
+import Input from "@/components/UI-kit/Inputs/Input";
+import { useEffect, useState } from "react";
+import ButtonLoader from "@/components/UI-kit/Loaders/ButtonLoader";
+
+export const inputsValues = [
+  {
+    label: "Введите вашу почту",
+    placeholder: "Введите вашу почту",
+    type: "email",
+  },
+  {
+    label: "Введите telegram",
+    placeholder: "Введите telegram",
+    type: "text",
+  },
+  {
+    label: "Задайте вопрос",
+    placeholder: "Задайте вопрос",
+    type: "text",
+  },
+];
 
 function ContactUs() {
+  const [error, setError] = useState<null | string>(null);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const { runCheck, isCheckError, checkValidate, isNoError, formFields } =
+    useValidation();
+
+  useEffect(() => {
+    if (isNoError) {
+      const site = formFields["0"];
+      const email = formFields["1"];
+      const nickname = formFields["2"];
+      const description = formFields["3"];
+      const date = new Date().toISOString().replace("T", " ").split(".")[0];
+      // handleSendTelegramMessage({ site, email, nickname, description, date });
+      setTimeout(() => setIsLoading(false), 300);
+    } else {
+      setTimeout(() => setIsLoading(false), 300);
+    }
+  }, [isNoError, formFields]);
+
+  const onSubmitHandler = (e: any) => {
+    setIsLoading(true);
+
+    e.preventDefault();
+    runCheck();
+  };
+
   return (
     <div className={styles.box}>
       <div className={clsx("wrapper", styles.wrapper)}>
@@ -13,7 +64,7 @@ function ContactUs() {
             наш сервис, вы ответим на все ваши вопросы! Просто напишите нам
           </p>
           <div className={styles.buttonsBox}>
-            <button>
+            <Button size="medium" variant="white">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -29,8 +80,8 @@ function ContactUs() {
                 />
               </svg>
               <span>+ 7 (000) 000-00-00</span>
-            </button>
-            <button>
+            </Button>
+            <Button size="medium" variant="white">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -46,17 +97,29 @@ function ContactUs() {
                 />
               </svg>
               <span>@extructor</span>
-            </button>
+            </Button>
           </div>
         </div>
-        <div className={styles.modalBox}>
-          <input type="text" placeholder="Введите вашу почту" />
-          <input type="text" placeholder="Введите telegram" />
-          <textarea placeholder="Задайте вопрос" rows={5} />
-          <Button size="medium" variant="contained">
-            Отправить
+        <form onSubmit={onSubmitHandler} className={styles.modalBox}>
+          {inputsValues.map((input, key) => (
+            <Input
+              key={key}
+              multiline={key === 2}
+              label={input.label}
+              placeholder={input.placeholder}
+              type={input.type}
+              // validation={input.validation}
+              isCheckError={isCheckError}
+              checkValidate={checkValidate}
+              name={String(key)}
+              isNoError={isNoError}
+              error={error}
+            />
+          ))}
+          <Button size="medium" variant="contained" typeSubmit>
+            {isLoading ? <ButtonLoader /> : "Отправить"}
           </Button>
-        </div>
+        </form>
       </div>
     </div>
   );

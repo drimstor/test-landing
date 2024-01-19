@@ -1,0 +1,212 @@
+@use "@/styles/_helpers" as *;
+
+.inputBox {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  position: relative;
+  z-index: 1;
+  border-radius: 14px;
+  background: var(
+    --Neutral-Secondary-Gradient---Main,
+    linear-gradient(
+      197deg,
+      rgba(41, 121, 255, 0.1) -11.48%,
+      rgba(76, 201, 255, 0.1) 67.84%,
+      rgba(76, 255, 233, 0.1) 123.3%
+    )
+  );
+  transition: all 0.3s ease-in-out;
+  min-width: 516px;
+  min-height: 50px;
+  border: 1px solid var(--Neutral-Stroke-for-inputs, #c5d7e4);
+
+  @include tablet {
+    min-width: 100%;
+  }
+
+  &:hover {
+    background: var(
+      --Neutral-Secondary-Gradient---Hover,
+      linear-gradient(
+        197deg,
+        rgba(41, 121, 255, 0.15) -11.48%,
+        rgba(76, 201, 255, 0.15) 67.84%,
+        rgba(76, 255, 233, 0.15) 123.3%
+      )
+    );
+  }
+
+  &.focusedLabel {
+    input,
+    textarea {
+      padding: 20px 16px 4px;
+
+      ~ label {
+        top: 6px;
+        left: 14px;
+        font-size: 12px;
+        line-height: 107%;
+        color: #ababaf;
+      }
+      ~ button {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    textarea {
+      padding: 0px 16px;
+    }
+  }
+
+  &.focused {
+    box-sizing: border-box;
+    background: radial-gradient(
+          circle at 100% 100%,
+          #ffffff 0,
+          #ffffff 13px,
+          transparent 13px
+        )
+        0% 0%/14px 14px no-repeat,
+      radial-gradient(
+          circle at 0 100%,
+          #ffffff 0,
+          #ffffff 13px,
+          transparent 13px
+        )
+        100% 0%/14px 14px no-repeat,
+      radial-gradient(
+          circle at 100% 0,
+          #ffffff 0,
+          #ffffff 13px,
+          transparent 13px
+        )
+        0% 100%/14px 14px no-repeat,
+      radial-gradient(circle at 0 0, #ffffff 0, #ffffff 13px, transparent 13px)
+        100% 100%/14px 14px no-repeat,
+      linear-gradient(#ffffff, #ffffff) 50% 50% / calc(100% - 2px)
+        calc(100% - 28px) no-repeat,
+      linear-gradient(#ffffff, #ffffff) 50% 50% / calc(100% - 28px)
+        calc(100% - 2px) no-repeat,
+      linear-gradient(#2c77cf 0%, #3eb2ca 100%);
+    border: 0;
+
+    input,
+    textarea {
+      padding: 20px 16px 4px;
+
+      ~ label {
+        top: 6px;
+        left: 14px;
+        font-size: 12px;
+        line-height: 107%;
+        color: var(--Neutral-Grey---Main, #66889e);
+      }
+      ~ button {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    textarea {
+      padding: 0px 16px;
+    }
+  }
+
+  &.error {
+    border: 1px solid #f65146;
+    background: #fbeae7;
+
+    label {
+      color: black;
+    }
+  }
+
+  &.textAreaBox {
+    min-height: 130px;
+    padding-top: 20px;
+  }
+
+  span {
+    position: absolute;
+    bottom: -17px;
+    font-size: 12px;
+    color: #f65146;
+    margin-top: -3px;
+    left: 6px;
+  }
+
+  button {
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    font-size: 18px;
+    color: #d9d9d9;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+    cursor: pointer;
+  }
+
+  img {
+    width: 22px;
+  }
+
+  label {
+    padding: 0 2px;
+    font-size: 1em;
+    font-weight: 400;
+    line-height: 150%;
+    position: absolute;
+    pointer-events: none;
+    left: 17px;
+    top: 12px;
+    transition: all 0.2s ease-in-out;
+    color: var(--Neutral-Grey---Main, #66889e);
+
+    border-radius: 4px;
+
+    p {
+      z-index: 9;
+      position: relative;
+    }
+  }
+
+  textarea {
+    background: transparent;
+    padding: 12px 16px;
+    color: #151823;
+
+    font-size: 16px;
+    outline: none;
+    resize: none;
+    min-height: 100px;
+
+    font-family: inherit;
+    @extend %scroll;
+    border: 1px solid transparent;
+  }
+
+  input {
+    max-height: 48px;
+    min-height: 48px;
+    background: transparent;
+    padding: 12px 16px;
+
+    color: var(--Neutral-Grey---Main, #66889e);
+    color: #151823;
+    font-size: 16px;
+    outline: none;
+    border-radius: 14px;
+    border: 1px solid transparent;
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus {
+      -webkit-box-shadow: inset 0 0 0 50px #151823;
+      -webkit-text-fill-color: rgb(255, 255, 255);
+      border: none;
+    }
+  }
+}

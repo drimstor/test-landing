@@ -77,13 +77,15 @@
     width: fit-content;
     border: 0;
     outline: none;
-    display: flex;
+    display: flex !important;
+    height: 56px;
     align-items: center;
     padding: 16px;
     gap: 8px;
     border-radius: 16px;
     background: rgba(255, 255, 255, 0.8);
     box-shadow: 0px 16px 32px 0px rgba(29, 55, 122, 0.08);
+    color: var(--Neutral-Black---Main, #101113);
 
     @include tablet {
       width: 100%;
@@ -133,19 +135,69 @@
     background: var(
       --Neutral-Secondary-Gradient---Main,
       linear-gradient(
-        187deg,
+        197deg,
         rgba(41, 121, 255, 0.1) -11.48%,
         rgba(76, 201, 255, 0.1) 67.84%,
         rgba(76, 255, 233, 0.1) 123.3%
       )
     );
-    color: var(--Neutral-Grey---Main, #66889e);
     resize: none;
     font-family: inherit;
     font-size: 16px;
+    transition: all 0.3s ease-in-out;
 
     @include tablet {
       min-width: 100%;
+    }
+
+    &:hover {
+      background: var(
+        --Neutral-Secondary-Gradient---Hover,
+        linear-gradient(
+          197deg,
+          rgba(41, 121, 255, 0.15) -11.48%,
+          rgba(76, 201, 255, 0.15) 67.84%,
+          rgba(76, 255, 233, 0.15) 123.3%
+        )
+      );
+    }
+
+    &:focus {
+      background: radial-gradient(
+            circle at 100% 100%,
+            #ffffff 0,
+            #ffffff 12px,
+            transparent 12px
+          )
+          0% 0%/14px 14px no-repeat,
+        radial-gradient(
+            circle at 0 100%,
+            #ffffff 0,
+            #ffffff 12px,
+            transparent 12px
+          )
+          100% 0%/14px 14px no-repeat,
+        radial-gradient(
+            circle at 100% 0,
+            #ffffff 0,
+            #ffffff 12px,
+            transparent 12px
+          )
+          0% 100%/14px 14px no-repeat,
+        radial-gradient(
+            circle at 0 0,
+            #ffffff 0,
+            #ffffff 12px,
+            transparent 12px
+          )
+          100% 100%/14px 14px no-repeat,
+        linear-gradient(#ffffff, #ffffff) 50% 50% / calc(100% - 4px)
+          calc(100% - 28px) no-repeat,
+        linear-gradient(#ffffff, #ffffff) 50% 50% / calc(100% - 28px)
+          calc(100% - 4px) no-repeat,
+        linear-gradient(181deg, #2c77cf 0%, #3eb2ca 100%);
+      border-radius: 14px;
+      box-sizing: border-box;
     }
 
     &::placeholder {
