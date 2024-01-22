@@ -104,7 +104,7 @@ function IndividualDesing() {
                   : ""
               }`}
             >
-              <Image src={image} alt={`Slide ${index + 1}`} priority />
+              <Image src={image} alt={`Slide ${index + 1}`} />
             </div>
           ))}
         </Slider>

@@ -3,11 +3,13 @@
 import styles from "./ChooseUs.module.scss";
 import clsx from "clsx";
 import { content, frames } from "./constants";
-import Image from "next/image";
 import { useState } from "react";
+
+import Image from "next/image";
 
 function ChooseUs() {
   const [slideIndex, setSlideIndex] = useState(0);
+
   return (
     <div className={styles.box}>
       <div className={clsx("wrapper", styles.wrapper)}>
@@ -28,7 +30,15 @@ function ChooseUs() {
           </ul>
           <div className={styles.content}>
             <p>{frames[slideIndex].text}</p>
-            <Image src={frames[slideIndex].img} alt="img" />
+            {frames.map((item, index) => (
+              <Image
+                src={item.img}
+                className={clsx(index === slideIndex && styles.isShow)}
+                key={index}
+                priority
+                alt="img"
+              />
+            ))}
           </div>
         </div>
       </div>

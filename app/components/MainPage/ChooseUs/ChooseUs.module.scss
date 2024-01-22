@@ -93,6 +93,12 @@
   img {
     width: 100%;
     height: auto;
+
+    display: none;
+
+    &.isShow {
+      display: block;
+    }
   }
 }
 
