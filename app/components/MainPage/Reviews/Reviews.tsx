@@ -5,31 +5,13 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import styles from "./Reviews.module.scss";
-import { useState } from "react";
 import { StarIcon, reviewsArray } from "./constants";
 
 function Reviews() {
-  const [currentSlide, setCurrentSlide] = useState(0);
-
-  const handlePrev = () => {
-    setCurrentSlide(
-      (prevIndex) => (prevIndex - 1 + reviewsArray.length) % reviewsArray.length
-    );
-    setActiveIndex((prev) => prev.map((element) => --element));
-  };
-
-  const handleNext = () => {
-    setCurrentSlide((prevIndex) => (prevIndex + 1) % reviewsArray.length);
-    setActiveIndex((prev) => prev.map((element) => ++element));
-  };
-
-  const [activeIndex, setActiveIndex] = useState([0, 1, 2, 3, 4, 5, 6, 7]);
-
   const PrevArrow = ({ onClick }: { onClick?: () => void }) => (
     <div
       className={clsx(styles.arrow, styles.prevArrow)}
       onClick={() => {
-        handlePrev();
         onClick && onClick();
       }}
     >
@@ -54,7 +36,6 @@ function Reviews() {
     <div
       className={styles.arrow}
       onClick={() => {
-        handleNext();
         onClick && onClick();
       }}
     >
@@ -93,7 +74,6 @@ function Reviews() {
     variableWidth: true,
     prevArrow: <NextArrow />,
     nextArrow: <PrevArrow />,
-    beforeChange: (current: number, next: number) => setCurrentSlide(next),
   };
 
   return (

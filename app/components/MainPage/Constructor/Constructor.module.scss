@@ -57,7 +57,7 @@
 }
 
 .blueBox {
-  max-width: 382px;
+  min-width: 382px;
   min-height: 432px;
   border-radius: 24px;
   box-shadow: 0px 16px 32px 0px rgba(29, 55, 122, 0.08);
@@ -69,7 +69,7 @@
   justify-content: space-between;
 
   @include laptop {
-    max-width: 100%;
+    min-width: 100%;
     min-height: 200px;
   }
 

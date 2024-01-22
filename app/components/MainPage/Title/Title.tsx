@@ -32,9 +32,9 @@ function Title() {
           </div>
         </div>
         <div className={styles.imagesBox}>
-          <Image src={imgLeft} alt="img" placeholder="blur" />
-          <Image src={imgCenter} alt="img" placeholder="blur" />
-          <Image src={imgRight} alt="img" placeholder="blur" />
+          <Image src={imgLeft} alt="img"  />
+          <Image src={imgCenter} alt="img"  />
+          <Image src={imgRight} alt="img"  />
         </div>
       </div>
     </div>

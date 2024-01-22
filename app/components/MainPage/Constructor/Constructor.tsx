@@ -2,44 +2,17 @@
 
 import Button from "@/components/UI-kit/Buttons/Button";
 import styles from "./Constructor.module.scss";
-import Switch from "@/components/UI-kit/Switch/Switch";
 import { useState } from "react";
 import clsx from "clsx";
+import WhiteBoxItem from "./SwitchItem";
+import { items } from "./constants";
 
 function Constructor() {
   const [sumResult, setSumResult] = useState(38);
 
-  const items = [
-    {
-      title: "Стартовая настройка",
-      price: "Бесплатно",
-      value: 0,
-    },
-    {
-      title: "Маркетпелейс дизайнов или заказ своего дизайна",
-      price: "2,000 RUB/мес",
-      value: 2,
-    },
-    {
-      title: "Telegram бот (функциональность обменника)",
-      price: "2,000 RUB/мес",
-      value: 2,
-    },
-    {
-      title: "Android / iOS приложение для админ-панели",
-      price: "2,000 RUB/мес",
-      value: 2,
-    },
-    {
-      title: "Cвой мерчант (функциональность для обработки трафика)",
-      price: "2,000 RUB/мес",
-      value: 2,
-    },
-  ];
-
-  const changeSumResultHandler = (index: number) => (isActive: boolean) => {
+  const changeSumResultHandler = (index: number, isActive: boolean) => {
     setSumResult((prev) =>
-      isActive ? prev - items[index].value : prev + items[index].value
+      isActive ? prev + items[index].value : prev - items[index].value
     );
   };
 
@@ -73,23 +46,22 @@ function Constructor() {
                 </svg>
                 <b>Покупка обменника</b>
               </div>
-              <span>30,000 RUB/мес</span>
+              <span>30 000 RUB/мес</span>
             </div>
             {items.map((item, index) => (
-              <div key={index} className={styles.whiteBoxItem}>
-                <div className={styles.switchBox}>
-                  <Switch onChange={changeSumResultHandler(index)} />
-                  {item.title}
-                </div>
-                <div className={styles.price}>{item.price}</div>
-              </div>
+              <WhiteBoxItem
+                item={item}
+                key={index}
+                index={index}
+                changeSumResultHandler={changeSumResultHandler}
+              />
             ))}
           </div>
           <div className={styles.blueBox}>
             <div className={styles.textBox}>
               <span>Итоговая стоимость обменника</span>
               <h4>
-                {sumResult},000 RUB/<span>мес</span>
+                {sumResult} 000 RUB/<span>мес</span>
               </h4>
             </div>
             <Button size="medium" variant="white">

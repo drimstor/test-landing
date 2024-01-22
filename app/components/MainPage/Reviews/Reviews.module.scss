@@ -116,10 +116,18 @@
   position: absolute;
   bottom: -75px;
   left: 0;
-
+  transition: background-color 0.3s ease-in-out;
   cursor: pointer;
   opacity: 1 !important;
   z-index: 9;
+
+  &:hover {
+    background: var(--Neutral-Light-Grey, #cbddff);
+  }
+
+  &:active {
+    background: var(--Neutral-Light-Grey, #b8d1ff);
+  }
 
   @include tablet {
     display: none;

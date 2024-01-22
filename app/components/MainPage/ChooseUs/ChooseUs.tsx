@@ -28,7 +28,7 @@ function ChooseUs() {
           </ul>
           <div className={styles.content}>
             <p>{frames[slideIndex].text}</p>
-            <Image src={frames[slideIndex].img} placeholder="blur" alt="img" />
+            <Image src={frames[slideIndex].img} alt="img" />
           </div>
         </div>
       </div>
