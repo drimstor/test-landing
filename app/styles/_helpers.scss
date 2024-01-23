@@ -35,11 +35,11 @@ $lightgrey: #757575;
 
 @mixin mobile($isNot: false) {
   @if $isNot {
-    @media screen and (min-width: 425px) {
+    @media screen and (min-width: 429px) {
       @content;
     }
   } @else {
-    @media screen and (max-width: 425px) {
+    @media screen and (max-width: 429px) {
       @content;
     }
   }

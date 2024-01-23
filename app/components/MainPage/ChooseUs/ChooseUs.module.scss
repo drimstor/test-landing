@@ -4,8 +4,12 @@
   position: relative;
   padding: 80px 0;
 
+  @include laptop {
+    padding: 80px 0 20px;
+  }
+
   @include tablet {
-    padding: 48px 0;
+    padding: 48px 0 16px;
   }
 
   h2 {
@@ -114,7 +118,9 @@
   }
 
   @include tablet {
-    padding: 16px;
+    padding: 16px 8px;
+    overflow: hidden;
+    display: block;
   }
 
   li {
@@ -122,7 +128,7 @@
     width: 490px;
     height: 80px;
     padding: 16px;
-    display: flex;
+    display: flex !important;
     align-items: center;
     gap: 16px;
     border-radius: 16px;
@@ -134,7 +140,7 @@
     line-height: 150%;
 
     @include laptop {
-      min-width: 252px;
+      min-width: 262px;
       height: 144px;
       flex-direction: column;
       align-items: flex-start;
@@ -142,9 +148,10 @@
 
     @include tablet {
       flex-direction: row;
-      min-width: 264px;
+      max-width: 264px;
       height: 90px;
       align-items: center;
+      margin: 0 8px;
     }
 
     &.active {
@@ -174,8 +181,8 @@
 
   svg {
     transition: all 0.3s ease-in-out;
-    width: 48px;
-    height: 48px;
+    min-width: 48px;
+    min-height: 48px;
     padding: 12px;
     border-radius: 8px;
     background: linear-gradient(
@@ -187,7 +194,7 @@
 
     @include tablet {
       min-width: 32px;
-
+      min-height: 32px;
       width: 32px;
       height: 32px;
       padding: 8px;

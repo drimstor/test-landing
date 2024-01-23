@@ -96,6 +96,7 @@ nav.nav {
     @include laptop {
       height: 60px;
       padding: 16px 42px;
+      width: 100%;
     }
 
     @include tablet {

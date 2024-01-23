@@ -43,7 +43,7 @@ a {
 
 .carousel-container {
   padding-top: 80px;
-  margin: 0 auto;
+  // margin: 0 auto;
   position: relative;
 
   @include tablet {
@@ -58,6 +58,7 @@ a {
   }
 
   .carousel-item {
+    margin: 0 6px;
     cursor: pointer;
     opacity: 0.2;
     transition: opacity 0.5s ease-in-out, margin 0.5s ease-in-out;

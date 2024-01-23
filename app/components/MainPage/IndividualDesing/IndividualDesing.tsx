@@ -75,6 +75,7 @@ function IndividualDesing() {
     arrows: true,
     prevArrow: <PrevArrow />,
     nextArrow: <NextArrow />,
+    variableWidth: true,
     beforeChange: (current: number, next: number) => setCurrentSlide(next),
   };
 
