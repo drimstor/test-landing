@@ -49,6 +49,10 @@
   }
 }
 
+.whiteBoxItem {
+  cursor: pointer;
+}
+
 .whiteBoxItem > span,
 .price {
   @include tablet {

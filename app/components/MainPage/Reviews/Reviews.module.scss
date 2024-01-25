@@ -42,23 +42,22 @@
 .bgCircle {
   z-index: 0;
   position: absolute;
-  border-radius: 1292.181px;
-  width: 1292.181px;
-  height: 225.153px;
+  border-radius: 50%;
+  width: 892.181px;
+  height: 525.153px;
   flex-shrink: 0;
-  filter: blur(150px);
-  opacity: 0.22;
+  filter: blur(50px);
+  opacity: 0.1;
   background: $mainColor;
-  bottom: 000px;
-  right: -50vw;
+  bottom: -200px;
+  right: -45vw;
 
   &.bgBlue {
-    filter: blur(100px);
-
     background: #4cc9ff;
+    opacity: 0.22;
 
-    bottom: -100px;
-    right: -30vw;
+    bottom: -300px;
+    right: -48vw;
   }
 }
 
@@ -105,6 +104,7 @@
 .starBox {
   margin-bottom: 10px;
 }
+
 .arrow {
   width: 48px;
   height: 48px;

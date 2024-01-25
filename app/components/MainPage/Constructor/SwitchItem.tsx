@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { MouseEvent, useState } from "react";
 import Switch from "@/components/UI-kit/Switch/Switch";
 import styles from "./Constructor.module.scss";
 
@@ -13,7 +13,7 @@ const WhiteBoxItem = ({
 }) => {
   const [switchState, setSwitchState] = useState(true);
 
-  const handleItemClick = (e: React.MouseEvent) => {
+  const handleItemClick = (e: MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
     setSwitchState(!switchState);

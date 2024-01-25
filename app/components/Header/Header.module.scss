@@ -62,8 +62,8 @@ nav.nav {
     height: 100%;
     width: 100vw;
     min-height: -moz-available;
-    min-height: fill-available;
-    min-height: -webkit-fill-available;
+    min-height: stretch;
+    min-height: -webkit-stretch;
     background: white;
     z-index: 9;
     transition: all 0.3s ease-in-out;

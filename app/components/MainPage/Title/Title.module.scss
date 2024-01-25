@@ -15,19 +15,33 @@
   position: absolute;
   border-radius: 1292.181px;
   width: 1292.181px;
-  height: 225.153px;
+  height: 525.153px;
   flex-shrink: 0;
-  filter: blur(200px);
-  opacity: 0.33;
-  background: #2979ff;
+  filter: blur(50px);
+  opacity: 0.13;
+  background: #4cc9ff;
 
-  top: -300px;
+  top: -100px;
   left: 50vw;
 
-  &.bgBlue {
-    background: #4cc9ff;
-    top: 120px;
+  @include laptop {
+    top: -300px;
     left: 40vw;
+  }
+
+  &.bgBlue {
+    background: #2979ff;
+    height: 425.153px;
+    width: 800px;
+
+    top: 220px;
+    left: 50vw;
+
+    @include laptop {
+      top: 00px;
+    left: 40vw;
+
+    }
   }
 }
 

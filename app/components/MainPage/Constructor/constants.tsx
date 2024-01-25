@@ -2,7 +2,11 @@ import InfoIcon from "./InfoIcon";
 
 export const items = [
   {
-    title: <>Стартовая настройка <InfoIcon /></>,
+    title: (
+      <>
+        Стартовая настройка <InfoIcon />
+      </>
+    ),
     price: "Бесплатно",
     value: 0,
   },

@@ -12,7 +12,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 function ChooseUs() {
   const [slideIndex, setSlideIndex] = useState(0);
-  const isTabletScreen = useMediaQuery("(max-width: 767px)");
+  const isTabletScreen = useMediaQuery("(max-width: 1199px)");
 
   const settings = {
     centerMode: false,
@@ -26,8 +26,8 @@ function ChooseUs() {
   return (
     <div className={styles.box}>
       <div className={clsx("wrapper", styles.wrapper)}>
-        <div className={clsx(styles.bgCircle, styles.bgBlue)} />
-        <div className={styles.bgCircle} />
+        {/* <div className={clsx(styles.bgCircle, styles.bgBlue)} /> */}
+        {/* <div className={styles.bgCircle} /> */}
         <h2>Почему стоит выбрать нас?</h2>
         <div className={styles.contentBox}>
           <ul className={styles.listButtons}>

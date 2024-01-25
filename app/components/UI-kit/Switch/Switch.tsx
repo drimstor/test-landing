@@ -1,6 +1,5 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
 import styles from "./Switch.module.scss";
 
 const Switch = ({ isActive, index }: { isActive: boolean; index: number }) => {
@@ -8,7 +7,7 @@ const Switch = ({ isActive, index }: { isActive: boolean; index: number }) => {
     <label className={styles["switch-container"]}>
       <input
         type="checkbox"
-        checked={index === 0 ? true : isActive}
+        defaultChecked={index === 0 ? true : isActive}
         className={styles["switch-input"]}
         disabled={index === 0}
       />
