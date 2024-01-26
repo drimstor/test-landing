@@ -46,15 +46,18 @@ a {
   // margin: 0 auto;
   position: relative;
 
-  height: 260px;
-
   @include tablet {
-  height: 180px;
-  padding-top: 40px;
+    padding-top: 40px;
   }
 }
 
 .design-carousel {
+  height: 260px;
+
+  @include tablet {
+    height: 180px;
+  }
+
   .carousel-item.left-active,
   .carousel-item.right-active {
     opacity: 0.4;

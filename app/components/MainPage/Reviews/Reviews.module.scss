@@ -5,11 +5,11 @@
   position: relative;
 
   @include tablet {
-    padding: 48px 0 100px;
+    padding: 48px 0;
   }
 
   @include mobile {
-    padding-bottom: 48px;
+    padding-bottom: 23px;
   }
 
   h2 {
@@ -20,7 +20,7 @@
 
     @include tablet {
       font-size: 32px;
-      margin-bottom: 24px;
+      margin-bottom: 7px;
     }
   }
 }
