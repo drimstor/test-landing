@@ -19,32 +19,44 @@
   }
 }
 
+@property --myColor1 {
+  syntax: "<color>";
+  initial-value: rgba(41, 121, 255, 0.1);
+  inherits: false;
+}
+
+@property --myColor2 {
+  syntax: "<color>";
+  initial-value: rgba(76, 201, 255, 0.1);
+  inherits: false;
+}
+
+@property --myColor3 {
+  syntax: "<color>";
+  initial-value: rgba(76, 255, 233, 0.1);
+  inherits: false;
+}
+
 .outlined {
   background: linear-gradient(
     197deg,
-    rgba(41, 121, 255, 0.1) -11.48%,
-    rgba(76, 201, 255, 0.1) 67.84%,
-    rgba(76, 255, 233, 0.1) 123.3%
+    var(--myColor1) -11.48%,
+    var(--myColor2) 67.84%,
+    var(--myColor3) 123.3%
   );
+  transition: --myColor1 0.4s, --myColor2 0.4s, --myColor3 0.4s !important;
   color: $mainColor;
 
   &:hover {
-    background: linear-gradient(
-      197deg,
-      rgba(41, 121, 255, 0.15) -11.48%,
-      rgba(76, 201, 255, 0.15) 67.84%,
-      rgba(76, 255, 233, 0.15) 123.3%
-    );
-    box-shadow: 0px 14px 16px -6px rgba(21, 81, 133, 0.16);
+    --myColor1: rgba(41, 121, 255, 0.15);
+    --myColor2: rgba(76, 201, 255, 0.15);
+    --myColor3: rgba(76, 255, 233, 0.15);
   }
 
   &:active {
-    background: linear-gradient(
-      197deg,
-      rgba(41, 121, 255, 0.4) -11.48%,
-      rgba(76, 201, 255, 0.4) 67.84%,
-      rgba(76, 255, 233, 0.4) 123.3%
-    );
+    --myColor1: rgba(41, 121, 255, 0.4);
+    --myColor2: rgba(76, 201, 255, 0.4);
+    --myColor3: rgba(76, 255, 233, 0.4);
   }
 }
 
